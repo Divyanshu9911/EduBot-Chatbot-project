@@ -61,7 +61,7 @@ A simple Java-based GUI chatbot for Galgotias University information.
 ---
 
 ## Developer:
-- *Name:* Divyanshu  
+- *Name:* Divyanshu  Singh, Ashish ranjan singh
 - *University:* Galgotias University  
 - *Semester:* 2nd (2028 Passout Batch)
 
