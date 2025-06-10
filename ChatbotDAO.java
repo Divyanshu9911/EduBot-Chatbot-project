@@ -14,8 +14,17 @@ public class ChatbotDAO {
             if (rs.next()) {
                 answer = rs.getString("answer");
             }
+
+            // ✅ Save chat history to DB (Optional but recommended)
+            String insertSQL = "INSERT INTO chat_history (user_input, bot_response) VALUES (?, ?)";
+            PreparedStatement logStmt = conn.prepareStatement(insertSQL);
+            logStmt.setString(1, question);
+            logStmt.setString(2, answer);
+            logStmt.executeUpdate();
+
             conn.close();
         } catch (Exception e) {
+            System.out.println("Database error: " + e.getMessage());
             e.printStackTrace();
         }
         return answer;
